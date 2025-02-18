@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binarycalculator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: binarycalculator
+  template:
+    metadata:
+      labels:
+        app: binarycalculator
+    spec:
+      containers:
+      - name: binarycalculator
+        image: northamerica-northeast2-docker.pkg.dev/massive-house-451100-p5/sofe3980u/binarycalculator:latest
+        imagePullPolicy: Always  # Ensures Kubernetes always pulls the latest image
+        ports:
+        - containerPort: 8080
