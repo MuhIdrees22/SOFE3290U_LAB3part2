@@ -1,10 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql-service
+  name: binarycalculator-service
 spec:
   type: LoadBalancer
-  ports:
-    - port: 3306
   selector:
-    app: mysql
+    app: binarycalculator
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
