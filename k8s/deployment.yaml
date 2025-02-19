@@ -1,19 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: binarycalculator
+  name: mysql-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: binarycalculator
+      app: mysql
   template:
     metadata:
       labels:
-        app: binarycalculator
+        app: mysql
     spec:
       containers:
-      - name: binarycalculator
-        image: northamerica-northeast2-docker.pkg.dev/massive-house-451100-p5/sofe3980u/binarycalculator:latest
-        ports:
-        - containerPort: 8080
+        - image: mysql/mysql-server
+          name: mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: huzaifa123
+            - name: MYSQL_USER
+              value: user
+            - name: MYSQL_PASSWORD
+              value: huzaifa123
+            - name: MYSQL_DATABASE
+              value: Readings
+          ports:
+            - containerPort: 3306
+              name: mysql
