@@ -72,7 +72,7 @@ pipeline {
                             }
                         }
                         // create a new deployment
-                        sh 'kubectl create deployment binarycalculator-deployment --image $IMAGE_TAG --port=8080'
+                        sh 'kubectl create deployment binarycalculator-deployment --image $IMAGE_TAG --port=80'
 
                     }
                 }
