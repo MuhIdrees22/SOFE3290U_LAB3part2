@@ -14,9 +14,9 @@ metadata:
   uid: f1f9aeb3-9c64-449d-ad5b-31e93cd52591
 spec:
   allocateLoadBalancerNodePorts: true
-  clusterIP: 34.118.237.19
+  clusterIP: 34.118.225.147
   clusterIPs:
-  - 34.118.237.19
+  - 34.118.225.147
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
   ipFamilies:
@@ -24,7 +24,7 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
   - nodePort: 31942
-    port: 8080
+    port: 80
     protocol: TCP
     targetPort: 8080
   selector:
@@ -34,5 +34,5 @@ spec:
 status:
   loadBalancer:
     ingress:
-    - ip: 34.95.46.106
+    - ip:  34.118.169.180
       ipMode: VIP
