@@ -31,5 +31,5 @@ Go to any browser and enter the <External-ip>:8080 (this should launch and show 
 
 * To get the yaml files in the same GKE console enter the following:  
 kubectl get deployment binarycalculator-deployment -o yaml (for the deployment yaml file)  
-kubectl get service binarycalculator-service -o yaml (for the service yaml file)  
+kubectl get service binarycalculator-service -o yaml (for the service yaml file).
 
